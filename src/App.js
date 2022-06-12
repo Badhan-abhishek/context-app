@@ -1,12 +1,15 @@
-import { useState } from "react";
 import "./App.css";
+import { ChangeMode } from "./components/change-mode";
 import Layout from "./components/layout";
+import { DarkModeProvider } from "./context/dark-mode";
 
 function App() {
-  const [isDark, setIsDark] = useState(false)
   return (
     <div>
-      <Layout setIsDark={setIsDark} isDark={isDark} />
+      <DarkModeProvider>
+        <ChangeMode />
+        <Layout />
+      </DarkModeProvider>
     </div>
   );
 }

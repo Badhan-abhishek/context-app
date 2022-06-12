@@ -2,14 +2,14 @@ import React from "react";
 import { Footer } from "./footer";
 import { Header } from "./header";
 
-export default function Layout({ isDark, setIsDark }) {
+export default function Layout() {
   return (
     <div style={{ padding: "30px" }}>
-      <Header isDarkMode={isDark} setIsDarkMode={setIsDark} />
+      <Header />
       <hr />
       <div>Layout</div>
       <hr />
-      <Footer isDarkMode={isDark} setIsDarkMode={setIsDark} />
+      <Footer />
     </div>
   );
 }

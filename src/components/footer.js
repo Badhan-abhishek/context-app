@@ -1,11 +1,13 @@
-export const Footer = ({ isDarkMode, setIsDarkMode }) => {
-    console.log("isDarkMode", isDarkMode)
+import { useDarkMode } from "../context/dark-mode";
+import { ChangeMode } from "./change-mode";
+
+export const Footer = () => {
+  const { isDark } = useDarkMode();
   return (
     <footer>
       <div>App Footer</div>
-      <div onClick={() => setIsDarkMode(!isDarkMode)}>
-        {isDarkMode ? "Dark" : "Light"}
-      </div>
+      <div>{isDark ? "Dark" : "Light"}</div>
+      <ChangeMode />
     </footer>
   );
 };
